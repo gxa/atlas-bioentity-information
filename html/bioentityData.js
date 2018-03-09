@@ -538,3 +538,5 @@ const bioentityData = [{
         "relevance": 0
     }]
 }]
+
+export default bioentityData
