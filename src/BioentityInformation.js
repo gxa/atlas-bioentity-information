@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 
 import URI from 'urijs'
 
-import BioentityProperty from './BioentityProperty';
+import BioentityProperty from './BioentityProperty'
+import Loading from './Loading'
 
 const fetchResponseJson = async (base, endpoint) => {
   const response = await fetch(URI(endpoint, base).toString())
@@ -16,7 +17,9 @@ class BioentityInformation extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      bioentityProperties: []
+      bioentityProperties: [],
+      errorMessage: null,
+      loading: false
     }
   }
 
@@ -27,7 +30,8 @@ class BioentityInformation extends React.Component {
       .then((responseJson) => {
         this.setState({
           bioentityProperties: responseJson,
-          errorMessage: null
+          errorMessage: null,
+          loading: false
         })
       })
       .catch((reason) => {
@@ -37,14 +41,34 @@ class BioentityInformation extends React.Component {
       })
   }
 
+  componentDidCatch(error, errorMessage) {
+    this.setState({
+      errorMessage: errorMessage
+    })
+  }
+
   componentDidMount() {
+    this.setState({
+      loading: true
+    })
     return this._fetchAndSetState(this.props)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.atlasUrl !== this.props.atlasUrl || nextProps.geneId !== this.props.geneId) {
+      this.setState({
+        bioentityProperties: [],
+        loading: true
+      })
+      this._fetchAndSetState(nextProps)
+    }
   }
 
   render() {
     return (
       <div className={`row`}>
         <div className={`small-12 columns`}>
+          <Loading loading={this.state.loading} resourceUrl={this.props.atlasUrl}/>
           <table>
             <tbody>
             {this.state.bioentityProperties.map(function(bioentityProperty){
