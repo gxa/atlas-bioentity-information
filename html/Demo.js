@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import BioentityInformation from '../src/BioentityInformation'
-import bioentityData from './bioentityData'
 import AtlasAutocomplete from 'expression-atlas-autocomplete'
 
 class Demo extends React.Component {
@@ -24,9 +23,8 @@ class Demo extends React.Component {
                            initialValue={this.state.geneId}
                            onSelect={ (geneId) => { this.setState({geneId: geneId}) }}/>
 
-        <BioentityInformation atlasUrl={`http://localhost:8080/gxa_sc`}
+        <BioentityInformation atlasUrl={`http://localhost:8080/gxa_sc/`}
                               geneId={this.state.geneId}
-                              bioentityProperties={bioentityData}
         />
       </div>
 
