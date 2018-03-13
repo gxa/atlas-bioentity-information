@@ -26,6 +26,14 @@ class BioentityProperty extends React.Component {
     this.state = {
       showAll: false
     }
+
+    this.handleShowMoreClick = this.handleClick.bind(this)
+  }
+
+  handleClick() {
+    this.setState(previousState => ({
+      showAll: !previousState.showAll
+    }))
   }
 
   // Return three most relevant links
@@ -46,13 +54,13 @@ class BioentityProperty extends React.Component {
   render() {
     const numberOfHiddenLinks = this.props.values.length - TOP_RELEVANT_VALUES
     const hasOptionalLinks = ["go","po"].indexOf(this.props.type) > -1 && numberOfHiddenLinks > 0
-    const showMoreLessButton = <a key="showButton" role="button"
-                                      style={{cursor:`pointer`}}
-                                      onClick={function(){
-                                        this.setState((previousState)=>({showAll: !previousState.showAll}))
-                                      }.bind(this)}>
-                                      {this.state.showAll ? ` (show less)` : ` … and ${numberOfHiddenLinks} more`}
-                                  </a>
+    const showMoreLessButton =
+      <a key="showButton"
+         role="button"
+         style={{cursor:`pointer`}}
+         onClick={this.handleShowMoreClick}>
+          {this.state.showAll ? ` (show less)` : ` … and ${numberOfHiddenLinks} more`}
+        </a>
 
     const allValuesWithOptionalLinks = this._renderPropertyValues(this.props.values)
     const topThreeValuesWithOptionalLinks = this._renderPropertyValues(this._getMostRelevant(this.props.values))
