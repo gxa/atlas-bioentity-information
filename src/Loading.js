@@ -10,7 +10,7 @@ const Loading = (props) => {
 
   return (
     <div className={`text-center`}>
-      <img className={`small-centered`} src={URI(`resources/images/loading.gif`, props.resourceUrl).toString()} />
+      <img className={`small-centered`} src={URI(`resources/images/loading.gif`, props.resourcesUrl).toString()} />
     </div>
   )
 }

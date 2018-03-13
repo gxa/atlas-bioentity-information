@@ -65,19 +65,24 @@ class BioentityInformation extends React.Component {
   }
 
   render() {
+    const bioentityProperties = this.state.bioentityProperties.map((property) =>
+      <tr key={property.type}>
+        <td>
+          {property.name}
+        </td>
+        <td>
+          <BioentityProperty type={property.type} values={property.values} />
+        </td>
+      </tr>
+    )
+
     return (
       <div className={`row`}>
         <div className={`small-12 columns`}>
-          <Loading loading={this.state.loading} resourceUrl={this.props.atlasUrl}/>
+          <Loading loading={this.state.loading} resourcesUrl={this.props.atlasUrl}/>
           <table>
             <tbody>
-            {this.state.bioentityProperties.map(function(bioentityProperty){
-              return (
-                <BioentityProperty
-                  key={bioentityProperty.type}
-                  {...bioentityProperty} />
-              )
-            })}
+              {bioentityProperties}
             </tbody>
           </table>
         </div>
