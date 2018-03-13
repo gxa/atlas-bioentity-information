@@ -7,7 +7,9 @@
     "dev": "webpack-dev-server -d",
     "dist": "NODE_ENV=production webpack --optimize-minimize",
     "prepublishOnly": "rm -rf lib && babel src -d lib --copy-files",
-    "test": "jest --coverage --verbose"
+    "testOnly": "jest --coverage --verbose",
+    "test": "npm run testOnly",
+    "posttest": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "jest": {
     "moduleNameMapper": {
@@ -22,7 +24,8 @@
   "collaborators": [
     "Elisabet Barrera <barrera@ebi.ac.uk>",
     "Wojciech Bażant <wbazant@ebi.ac.uk>",
-    "Alfonso Muñoz-Pomer Fuentes <amunoz@ebi.ac.uk>"
+    "Alfonso Muñoz-Pomer Fuentes <amunoz@ebi.ac.uk>",
+    "Monica Jianu <monica@ebi.ac.uk>"
   ],
   "license": "Apache-2.0",
   "repository": {
@@ -45,6 +48,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.17",
+    "coveralls": "^3.0.0",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
     "jest": "^21.2.1",
