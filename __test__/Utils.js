@@ -63,36 +63,64 @@ const mockBioentityProperties = () => {
       }]
     },
     {
-    type: `synonym`,
-    name: `Synonym`,
-    values: [
-      {
-        text: `Sftp1`,
-        url: ``,
-        relevance: 0
-      },
-      {
-        text: `Sftp-1`,
-        url: ``,
-        relevance: 0
-      },
-      {
-        text: `SP-A`,
-        url: ``,
-        relevance: 0
-      },
-      {
-        text: `surfactant pulmonary associated protein A1`,
-        url: ``,
-        relevance: 0
-      },
-      {
-        text: `SFTPA1`,
-        url: ``,
-        relevance: 0
-      }
-    ]
-  }]
+      type: `synonym`,
+      name: `Synonym`,
+      values: [
+        {
+          text: `Sftp1`,
+          url: ``,
+          relevance: 0
+        },
+        {
+          text: `Sftp-1`,
+          url: ``,
+          relevance: 0
+        },
+        {
+          text: `SP-A`,
+          url: ``,
+          relevance: 0
+        },
+        {
+          text: `surfactant pulmonary associated protein A1`,
+          url: ``,
+          relevance: 0
+        },
+        {
+          text: `SFTPA1`,
+          url: ``,
+          relevance: 0
+        }
+      ]
+    },
+    {
+      type: `ensgene`,
+      name: `Ensembl gene`,
+      values: [
+        {
+          text: `ENSMUSG00000021789`,
+          url: `http://www.ensemblgenomes.org/id-gene/ENSMUSG00000021789`,
+          relevance: 0
+        }
+      ]
+    },
+    {
+      type: `enstranscript`,
+      name: `Ensembl transcript`,
+      values: [
+        {
+          text: `ENSMUST00000170719`,
+          url: `http://www.ensemblgenomes.org/id/ENSMUST00000170719`,
+          relevance: 0
+        },
+        {
+          text: `ENSMUST00000022314`,
+          url: `http://www.ensemblgenomes.org/id/ENSMUST00000022314`,
+          relevance: 0
+        }
+      ]
+    }
+  ]
 }
 
 export { mockBioentityProperties }

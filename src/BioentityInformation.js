@@ -45,7 +45,7 @@ class BioentityInformation extends React.Component {
 
   componentDidCatch(error, errorMessage) {
     this.setState({
-      errorMessage: errorMessage
+      errorMessage: `${error}`
     })
   }
 
@@ -62,7 +62,7 @@ class BioentityInformation extends React.Component {
         bioentityProperties: [],
         loading: true
       })
-      this._fetchAndSetState(nextProps)
+      return this._fetchAndSetState(nextProps)
     }
   }
 

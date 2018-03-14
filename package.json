@@ -52,6 +52,7 @@
     "css-loader": "^0.28.10",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
+    "fetch-mock": "^6.1.0",
     "jest": "^21.2.1",
     "react-test-renderer": "^16.0.0",
     "style-loader": "^0.20.3",
