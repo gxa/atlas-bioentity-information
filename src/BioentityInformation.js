@@ -81,7 +81,7 @@ class BioentityInformation extends React.Component {
     return (
       <div className={`row`}>
         <div className={`small-12 columns`}>
-          <Loading loading={this.state.loading} resourcesUrl={this.props.atlasUrl}/>
+          <Loading loading={this.state.loading}/>
           <table>
             <tbody>
               {bioentityProperties}

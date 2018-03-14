@@ -30,7 +30,6 @@
     "url": "https://github.com/gxa/atlas-bioentity-information.git"
   },
   "dependencies": {
-    "expression-atlas-autocomplete": "^1.1.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -49,7 +48,10 @@
     "css-loader": "^0.28.10",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
+    "expression-atlas-autocomplete": "^1.1.1",
     "fetch-mock": "^6.1.0",
+    "file-loader": "^1.1.11",
+    "image-webpack-loader": "^4.2.0",
     "jest": "^21.2.1",
     "react-test-renderer": "^16.0.0",
     "style-loader": "^0.20.3",
