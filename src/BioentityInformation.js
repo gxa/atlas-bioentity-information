@@ -79,15 +79,13 @@ class BioentityInformation extends React.Component {
     )
 
     return (
-      <div className={`row`}>
-        <div className={`small-12 columns`}>
-          <Loading loading={this.state.loading}/>
-          <table>
-            <tbody>
-              {bioentityProperties}
-            </tbody>
-          </table>
-        </div>
+      <div className={`row column`}>
+        <Loading loading={this.state.loading}/>
+        <table>
+          <tbody>
+          {bioentityProperties}
+          </tbody>
+        </table>
       </div>
     )
   }

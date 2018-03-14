@@ -4,12 +4,11 @@ import PropTypes from 'prop-types'
 
 const PropertyValue = ({hasUrl, isLast, text, url}) =>
   <span>
-    {hasUrl &&
-      <a className={"bioEntityCardLink"} href={url} target="_blank">{text}</a>
-    }
-
-    {!hasUrl &&
-      <span>{text}</span>
+    {hasUrl ? (
+        <a className={"bioEntityCardLink"} href={url} target="_blank">{text}</a>
+      ) : (
+        <span>{text}</span>
+      )
     }
 
     {!isLast &&

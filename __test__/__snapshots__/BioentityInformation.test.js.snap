@@ -2,22 +2,18 @@
 
 exports[`BioentityInformation with no data matches snapshot 1`] = `
 <div
-  className="row"
+  className="row column"
 >
   <div
-    className="small-12 columns"
+    className="text-center"
   >
-    <div
-      className="text-center"
-    >
-      <img
-        className="small-centered"
-        src="resources/images/loading.gif"
-      />
-    </div>
-    <table>
-      <tbody />
-    </table>
+    <img
+      className="small-centered"
+      src="test-file-stub"
+    />
   </div>
+  <table>
+    <tbody />
+  </table>
 </div>
 `;
